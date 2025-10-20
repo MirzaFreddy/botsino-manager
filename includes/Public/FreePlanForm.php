@@ -144,7 +144,17 @@ class FreePlanForm {
             'attempts' => 0
         ]);
         
-        wp_send_json_success(['message' => '✅ درخواست شما ثبت شد']);
+        // پردازش همزمان صف برای انجام فوری ساخت کاربر و ارسال پیام‌ها
+        require_once BOTSINO_PLUGIN_DIR . 'includes/Queue/QueueManager.php';
+        $queue_manager = new \BotsinoManager\Queue\QueueManager();
+        $processed_count = $queue_manager->process();
+        
+        if ($processed_count > 0) {
+            wp_send_json_success(['message' => '✅ درخواست شما ثبت شد و پردازش شد']);
+        } else {
+            // اگر به هر دلیل پردازشی انجام نشد، همچنان موفق ولی با توضیح
+            wp_send_json_success(['message' => '✅ درخواست شما ثبت شد. پردازش به‌زودی انجام می‌شود']);
+        }
         wp_die();
     }
 }

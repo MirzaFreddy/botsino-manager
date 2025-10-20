@@ -106,11 +106,22 @@ class MainPage {
         $email = sanitize_email($_GET['email']);
         
         require_once BOTSINO_PLUGIN_DIR . 'includes/API/APIClient.php';
+        require_once BOTSINO_PLUGIN_DIR . 'includes/Config/Constants.php';
         $api = new \BotsinoManager\API\APIClient();
         $result = $api->delete_user($email);
         
         require_once BOTSINO_PLUGIN_DIR . 'includes/Helpers/Logger.php';
         if ($result['success']) {
+            // حذف رکورد کاربر از جدول انقضاهای محلی برای جلوگیری از ارسال یادآوری
+            global $wpdb;
+            $exp_table = $wpdb->prefix . \BotsinoManager\Config\Constants::EXPIRATIONS_TABLE;
+            $deleted = $wpdb->delete($exp_table, ['user_email' => $email]);
+            \BotsinoManager\Helpers\Logger::info(
+                'user_management',
+                'حذف کاربر از جدول انقضاهای محلی پس از حذف از Botsino',
+                ['email' => $email, 'deleted_rows' => $deleted]
+            );
+            
             \BotsinoManager\Helpers\Logger::success(
                 'user_management',
                 'کاربر حذف شد',
@@ -136,10 +147,14 @@ class MainPage {
         check_admin_referer('botsino_bulk_action');
         
         require_once BOTSINO_PLUGIN_DIR . 'includes/API/APIClient.php';
+        require_once BOTSINO_PLUGIN_DIR . 'includes/Config/Constants.php';
         $api = new \BotsinoManager\API\APIClient();
         
         $success_count = 0;
         $fail_count = 0;
+        
+        global $wpdb;
+        $exp_table = $wpdb->prefix . \BotsinoManager\Config\Constants::EXPIRATIONS_TABLE;
         
         foreach ($_POST['user_emails'] as $email) {
             $email = sanitize_email($email);
@@ -147,6 +162,8 @@ class MainPage {
             
             if ($result['success']) {
                 $success_count++;
+                // حذف رکورد انقضا از جدول محلی
+                $wpdb->delete($exp_table, ['user_email' => $email]);
             } else {
                 $fail_count++;
             }

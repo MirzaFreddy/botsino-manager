@@ -60,6 +60,9 @@ class Plugin {
         $this->loader->add_shortcode('botsino_free_plan_popup', $free_plan, 'render');
         $this->loader->add_action('wp_ajax_botsino_process_free_plan', $free_plan, 'handle_ajax');
         $this->loader->add_action('wp_ajax_nopriv_botsino_process_free_plan', $free_plan, 'handle_ajax');
+        // Fresh nonce endpoint to avoid cache-stale nonce issues
+        $this->loader->add_action('wp_ajax_botsino_get_freeplan_nonce', $free_plan, 'get_nonce_ajax');
+        $this->loader->add_action('wp_ajax_nopriv_botsino_get_freeplan_nonce', $free_plan, 'get_nonce_ajax');
         
         // WooCommerce Integration
         $queue_manager = new \BotsinoManager\Queue\QueueManager();

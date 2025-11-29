@@ -5,152 +5,158 @@
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4.svg)](https://www.php.net/)
 [![License](https://img.shields.io/badge/License-GPL%20v2-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
-افزونه مدیریت یکپارچه کاربران Botsino با WooCommerce و ارسال خودکار اطلاعات ورود از طریق واتساپ
+**Integrated user management plugin for Botsino system with WooCommerce and automatic WhatsApp login credentials delivery**
 
 ---
 
-## 📖 فهرست مطالب
+## 📖 Table of Contents
 
-- [ویژگی‌ها](#-ویژگیها)
-- [نیازمندی‌ها](#-نیازمندیها)
-- [نصب](#-نصب)
-- [پیکربندی](#-پیکربندی)
-- [استفاده](#-استفاده)
-- [ساختار پروژه](#-ساختار-پروژه)
-- [توسعه](#-توسعه)
-- [مشارکت](#-مشارکت)
-- [لایسنس](#-لایسنس)
-
----
-
-## ✨ ویژگی‌ها
-
-### 🔄 یکپارچه‌سازی خودکار
-- ✅ اتصال به API سیستم Botsino
-- ✅ ساخت خودکار کاربر پس از خرید در WooCommerce
-- ✅ سیستم صف پیشرفته برای پردازش درخواست‌ها
-- ✅ ارسال خودکار اطلاعات ورود به واتساپ
-
-### 📨 سیستم پیام‌رسانی
-- ✅ ارسال پیام واتساپ از طریق API Botsino
-- ✅ ارسال SMS (قابل پیکربندی)
-- ✅ پیام‌های فوری و صف‌بندی شده
-- ✅ قالب‌های پیام قابل تنظیم
-
-### 🎯 مدیریت کاربران
-- ✅ ساخت و ویرایش کاربران
-- ✅ حذف تکی و دسته‌ای کاربران
-- ✅ بررسی شماره موبایل و ایمیل تکراری
-- ✅ مدیریت تاریخ انقضا
-- ✅ نمایش وضعیت کاربران
-
-### 📊 پنل مدیریت حرفه‌ای
-- ✅ داشبورد با آمار کامل
-- ✅ لیست کاربران با فیلتر و جستجو
-- ✅ مدیریت صف درخواست‌ها
-- ✅ سیستم لاگ‌گیری پیشرفته
-- ✅ تنظیمات کامل
-
-### 🔔 سیستم یادآوری
-- ✅ بررسی خودکار تاریخ انقضا
-- ✅ ارسال یادآوری قبل از انقضا
-- ✅ تولید کوپن تخفیف خودکار
-- ✅ پیام‌های شخصی‌سازی شده
-
-### 🎁 فرم تست رایگان
-- ✅ شورت‌کد برای نمایش در سایت
-- ✅ بررسی خودکار کاربر تکراری
-- ✅ ارسال فوری پیام تایید
-- ✅ ایجاد خودکار سفارش WooCommerce
+- [Features](#-features)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Configuration](#-configuration)
+- [Usage](#-usage)
+- [Project Structure](#-project-structure)
+- [Development](#-development)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## 📋 نیازمندی‌ها
+## ✨ Features
 
-- **WordPress:** 5.0 یا بالاتر
-- **WooCommerce:** 3.0 یا بالاتر
-- **PHP:** 7.4 یا بالاتر
-- **MySQL:** 5.6 یا بالاتر
-- **حساب کاربری Botsino** با API Key
+### 🔄 Automatic Integration
+
+- ✅ Connect to Botsino system API
+- ✅ Automatic user creation after WooCommerce purchase
+- ✅ Advanced queue system for request processing
+- ✅ Automatic login credentials delivery via WhatsApp
+
+### 📨 Messaging System
+
+- ✅ WhatsApp messaging via Botsino API
+- ✅ SMS delivery (configurable)
+- ✅ Instant and queued messages
+- ✅ Customizable message templates
+
+### 🎯 User Management
+
+- ✅ Create and edit users
+- ✅ Single and bulk user deletion
+- ✅ Duplicate mobile and email checking
+- ✅ Expiration date management
+- ✅ User status display
+
+### 📊 Professional Admin Panel
+
+- ✅ Dashboard with complete statistics
+- ✅ User list with filters and search
+- ✅ Request queue management
+- ✅ Advanced logging system
+- ✅ Complete settings
+
+### 🔔 Reminder System
+
+- ✅ Automatic expiration date checking
+- ✅ Pre-expiration reminders
+- ✅ Automatic discount coupon generation
+- ✅ Personalized messages
+
+### 🎁 Free Trial Form
+
+- ✅ Shortcode for website display
+- ✅ Automatic duplicate user checking
+- ✅ Instant confirmation message delivery
+- ✅ Automatic WooCommerce order creation
 
 ---
 
-## 🚀 نصب
+## 📋 Requirements
 
-### روش 1: نصب دستی
+- **WordPress:** 5.0 or higher
+- **WooCommerce:** 3.0 or higher
+- **PHP:** 7.4 or higher
+- **MySQL:** 5.6 or higher
+- **Botsino account** with API Key
 
-1. فایل‌های پلاگین را دانلود کنید
-2. پوشه `botsino-manager` را در `wp-content/plugins/` آپلود کنید
-3. به پنل مدیریت وردپرس بروید
-4. به **افزونه‌ها** → **افزونه‌های نصب شده** بروید
-5. پلاگین **Botsino User Management** را فعال کنید
+---
 
-### روش 2: از طریق Git
+## 🚀 Installation
+
+### Method 1: Manual Installation
+
+1. Download the plugin files
+2. Upload the `botsino-manager` folder to `wp-content/plugins/`
+3. Go to WordPress Admin Dashboard
+4. Navigate to **Plugins** → **Installed Plugins**
+5. Activate the **Botsino User Management** plugin
+
+### Method 2: Via Git
 
 ```bash
 cd wp-content/plugins/
 git clone https://github.com/YOUR_USERNAME/botsino-manager.git
 ```
 
-سپس پلاگین را از پنل مدیریت فعال کنید.
+Then activate the plugin from the admin dashboard.
 
 ---
 
-## ⚙️ پیکربندی
+## ⚙️ Configuration
 
-### 1. تنظیمات API
+### 1. API Settings
 
-به **Botsino** → **تنظیمات** بروید و موارد زیر را وارد کنید:
+Go to **Botsino** → **Settings** and enter the following:
 
-- **API Key:** کلید API دریافتی از Botsino
-- **API URL:** آدرس API سیستم Botsino
-- **WhatsApp Instance ID:** شناسه اینستنس واتساپ
-- **WhatsApp Access Token:** توکن دسترسی واتساپ
+- **API Key:** API key received from Botsino
+- **API URL:** Botsino system API address
+- **WhatsApp Instance ID:** WhatsApp instance identifier
+- **WhatsApp Access Token:** WhatsApp access token
 
-### 2. تنظیمات محصولات
+### 2. Product Settings
 
-- **Free Plan Product ID:** شناسه محصول تست رایگان
-- **Plan Mappings:** تطبیق پلن‌های WooCommerce با Botsino
+- **Free Plan Product ID:** Free trial product identifier
+- **Plan Mappings:** WooCommerce plans mapping with Botsino
 
-### 3. فعال‌سازی Cron Jobs
+### 3. Activate Cron Jobs
 
-پلاگین به صورت خودکار Cron Job‌های زیر را ثبت می‌کند:
+The plugin automatically registers the following Cron Jobs:
 
-- `botsino_process_queue` - هر دقیقه
-- `botsino_process_message_queue` - هر دقیقه
-- `botsino_daily_expiration_check` - روزانه
+- `botsino_process_queue` - Every minute
+- `botsino_process_message_queue` - Every minute
+- `botsino_daily_expiration_check` - Daily
 
 ---
 
-## 📖 استفاده
+## 📖 Usage
 
-### ساخت کاربر دستی
+### Manual User Creation
 
-1. به **Botsino** → **ساخت کاربر** بروید
-2. فرم را پر کنید
-3. روی **ساخت کاربر** کلیک کنید
+1. Go to **Botsino** → **Create User**
+2. Fill out the form
+3. Click **Create User**
 
-### مشاهده لیست کاربران
+### View User List
 
-1. به **Botsino** → **لیست کاربران** بروید
-2. برای حذف دسته‌ای، کاربران را انتخاب کنید
-3. روی **حذف موارد انتخابی** کلیک کنید
+1. Go to **Botsino** → **User List**
+2. For bulk deletion, select users
+3. Click **Delete Selected Items**
 
-### مدیریت صف
+### Queue Management
 
-1. به **Botsino** → **صف کاربران** بروید
-2. وضعیت درخواست‌ها را مشاهده کنید
-3. در صورت نیاز، درخواست‌ها را مجدداً پردازش کنید
+1. Go to **Botsino** → **User Queue**
+2. View request status
+3. Re-process requests if needed
 
-### مشاهده لاگ‌ها
+### View Logs
 
-1. به **Botsino** → **لاگ‌ها** بروید
-2. از فیلترها برای جستجو استفاده کنید
-3. جزئیات هر لاگ را مشاهده کنید
+1. Go to **Botsino** → **Logs**
+2. Use filters for searching
+3. View detailed log information
 
-### استفاده از شورت‌کد
+### Using Shortcode
 
-برای نمایش فرم تست رایگان در صفحه:
+To display the free trial form on a page:
 
 ```
 [botsino_free_plan_popup]
@@ -158,7 +164,7 @@ git clone https://github.com/YOUR_USERNAME/botsino-manager.git
 
 ---
 
-## 📁 ساختار پروژه
+## 📁 Project Structure
 
 ```
 botsino-manager/
@@ -199,76 +205,46 @@ botsino-manager/
 │   └── Public/
 │       └── FreePlanForm.php         # Free plan form shortcode
 ├── README.md
-├── MIGRATION_GUIDE.md               # Step-by-step migration guide
+├── README_EN.md                     # English documentation
 ├── STRUCTURE.md                     # Complete architecture documentation
-└── BUGFIX.md                        # Bug fixes and troubleshooting
+└── LICENSE                          # GPL v2 License
 ```
+
+---
 
 ## 🎯 Key Improvements
 
 ### 1. **Modular Architecture**
+
 - Each module has a single responsibility
 - Easy to test and maintain
 - Clear separation of concerns
 
 ### 2. **PSR-4 Autoloading**
+
 - Classes loaded automatically
 - No manual require statements
 - Namespace-based organization
 
 ### 3. **Professional Patterns**
+
 - Dependency Injection
 - Single Responsibility Principle
 - DRY (Don't Repeat Yourself)
 - SOLID principles
 
 ### 4. **Better Organization**
+
 - Config centralized in Constants class
 - Helpers for common utilities
 - Clear module boundaries
 
-## 🔄 Migration Guide
-
-### Step 1: Backup
-```bash
-# Backup old file
-cp botsino-manager.php botsino-manager-backup.php
-```
-
-### Step 2: Deactivate Old Plugin
-- Go to WordPress Admin → Plugins
-- Deactivate "Botsino User Management"
-
-### Step 3: Rename Files
-```bash
-# Rename old file
-mv botsino-manager.php botsino-manager-old.php
-
-# Activate new file
-mv botsino-manager-new.php botsino-manager.php
-```
-
-### Step 4: Activate New Plugin
-- Go to WordPress Admin → Plugins
-- Activate "Botsino User Management"
-- All data preserved, no functionality changed
-
-## ✅ Testing Checklist
-
-- [ ] Plugin activates without errors
-- [ ] WooCommerce order completion triggers user creation
-- [ ] Queue processing works via cron
-- [ ] Message queue sends WhatsApp/SMS
-- [ ] Reminders system checks expirations
-- [ ] Coupons generate correctly
-- [ ] Admin panels load properly
-- [ ] Settings save correctly
-- [ ] Free plan form works
-- [ ] All hooks fire correctly
+---
 
 ## 🔧 Functionality Preserved
 
 **Every single feature from the original 5000-line file is preserved:**
+
 - ✅ User creation/update in Botsino
 - ✅ WooCommerce integration
 - ✅ Queue system (main + message)
@@ -283,12 +259,15 @@ mv botsino-manager-new.php botsino-manager.php
 - ✅ All API calls
 - ✅ All hooks and filters
 
+---
+
 ## 📝 Code Quality
 
 **Before:** 4804 lines in one file
 **After:** Modular structure with ~150-300 lines per file
 
 **Benefits:**
+
 - Easy to find code
 - Simple to debug
 - Fast to modify
@@ -296,13 +275,31 @@ mv botsino-manager-new.php botsino-manager.php
 - Testable modules
 - Scalable architecture
 
-## 🚀 Next Steps
+---
 
-1. Delete old file after confirming everything works
-2. Consider adding automated tests
-3. Add PHPDoc blocks for better IDE support
-4. Create admin view templates
-5. Add logging improvements
+## 🚀 Development
+
+### Testing Checklist
+
+- [ ] Plugin activates without errors
+- [ ] WooCommerce order completion triggers user creation
+- [ ] Queue processing works via cron
+- [ ] Message queue sends WhatsApp/SMS
+- [ ] Reminders system checks expirations
+- [ ] Coupons generate correctly
+- [ ] Admin panels load properly
+- [ ] Settings save correctly
+- [ ] Free plan form works
+- [ ] All hooks fire correctly
+
+### Next Steps
+
+1. Add automated tests
+2. Add PHPDoc blocks for better IDE support
+3. Create admin view templates
+4. Add logging improvements
+
+---
 
 ## 💡 Notes
 
@@ -311,3 +308,35 @@ mv botsino-manager-new.php botsino-manager.php
 - Database structure unchanged
 - API calls identical
 - Hook names unchanged for compatibility
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 📄 License
+
+This project is licensed under the GNU General Public License v2.0 - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🏷️ Topics/Tags
+
+```
+wordpress, woocommerce, plugin, user-management, botsino, whatsapp, sms,
+api-integration, queue-system, notifications, reminders, php, gpl-2.0,
+modular-architecture, psr-4, automated-messaging, e-commerce, subscription-management
+```
+
+---
+
+## 📞 Support
+
+For support and questions:
+
+- **Author:** MirzaFreddy
+- **Website:** https://ultrabot.ir
+- **Plugin URI:** https://ultrabot.ir

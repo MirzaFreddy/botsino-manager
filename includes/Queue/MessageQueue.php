@@ -39,8 +39,8 @@ class MessageQueue {
             error_log("Existing user - sending update message without password");
             $message = "🎉 پلن شما با موفقیت به‌روزرسانی شد!\n\n" .
                        "👤 نام کاربری: $username\n" .
-                       "🌐 آدرس سایت: https://botsino.ir\n" .
-                       "📚 آموزش‌ها: https://botsino.ir/blog_internal";
+                       "🌐 آدرس سایت: https://app.ultrabot.ir\n" .
+                       "📚 آموزش‌ها: https://app.ultrabot.ir/blog_internal";
             
             return $this->send_whatsapp_update_message($phone, $fullname, $message);
         }
@@ -50,8 +50,8 @@ class MessageQueue {
             $message = "🎉 حساب Botsino شما آماده است!\n\n" .
                        "👤 نام کاربری: $username\n" .
                        "🔑 رمز عبور: از رمز قبلی خود استفاده کنید\n" .
-                       "🌐 آدرس سایت: https://botsino.ir\n" .
-                       "📚 آموزش‌ها: https://botsino.ir/blog_internal";
+                       "🌐 آدرس سایت: https://app.ultrabot.ir\n" .
+                       "📚 آموزش‌ها: https://app.ultrabot.ir/blog_internal";
             
             return $this->send_whatsapp_update_message($phone, $fullname, $message);
         }

@@ -9,7 +9,7 @@ class WhatsAppSender {
     
     protected $access_token;
     protected $instance_id;
-    protected $api_url = 'https://botsino.ir/api/send';
+    protected $api_url = 'https://app.ultrabot.ir/api/send';
     
     public function __construct() {
         $this->access_token = get_option('botsino_access_token');
@@ -51,20 +51,20 @@ class WhatsAppSender {
         }
         
         if (empty($password)) {
-            $single_message = "🎉 حساب Botsino شما به‌روزرسانی شد!\n\n" .
+            $single_message = "🎉 حساب ultrabot شما به‌روزرسانی شد!\n\n" .
                             "🔐 اطلاعات ورود:\n" .
-                            "🌐 آدرس سایت: https://botsino.ir\n" .
-                            "📚 آموزش‌ها: https://botsino.ir/blog_internal\n\n" .
+                            "🌐 آدرس سایت: https://app.ultrabot.ir\n" .
+                            "📚 آموزش‌ها: https://app.ultrabot.ir/blog_internal\n\n" .
                             "👤 نام کاربری: {$username}\n\n" .
                             "✅ از رمز عبور قبلی خود استفاده کنید";
             
             return $this->send_text($whatsapp_number, $single_message);
         }
         
-        $guide_message = "🎉 حساب Botsino شما آماده است!\n\n" .
+        $guide_message = "🎉 حساب ultrabot شما آماده است!\n\n" .
                        "🔐 اطلاعات ورود:\n" .
-                       "🌐 آدرس سایت: https://botsino.ir\n" .
-                       "📚 آموزش‌ها: https://botsino.ir/blog_internal\n\n" .
+                       "🌐 آدرس سایت: https://app.ultrabot.ir\n" .
+                       "📚 آموزش‌ها: https://app.ultrabot.ir/blog_internal\n\n" .
                        "👤 نام کاربری: {$username}\n\n" .
                        "رمز عبور در پیام بعدی ارسال خواهد شد...";
         

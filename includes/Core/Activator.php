@@ -37,7 +37,7 @@ class Activator {
     private static function set_default_options() {
         $defaults = [
             'botsino_api_key' => '',
-            'botsino_api_url' => 'https://botsino.ir/admin_api/users',
+            'botsino_api_url' => 'https://app.ultrabot.ir/admin_api/users',
             'botsino_sms_provider' => 'sms',
             'botsino_sms_api_key' => '',
             'botsino_sms_sender' => '',

@@ -233,7 +233,7 @@ class UserManager {
         $message .= "💡 هر شماره موبایل فقط یک بار می‌تواند از تست رایگان استفاده کند.\n\n";
         $message .= "🔐 اگر رمز عبور خود را فراموش کرده‌اید، لطفاً با پشتیبانی تماس بگیرید.\n\n";
         $message .= "📞 پشتیبانی: @ultrabot_support\n\n";
-        $message .= "🌐 سایت: https://botsino.ir";
+        $message .= "🌐 سایت: https://app.ultrabot.ir";
         
         \BotsinoManager\Helpers\Logger::warning(
             'message_send',
